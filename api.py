@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Configurações do broker MQTT
 BROKER = "broker.hivemq.com"
 PORT = 1883
-TOPIC = "fiap/cp06/smartfactory/temperatura"
+TOPIC = "edge/2ano/2CCPG/grupo23/smartfactory/dados"
 
 # Dados recebidos do ESP32
 dados = {

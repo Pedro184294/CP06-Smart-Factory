@@ -1,0 +1,153 @@
+{
+    "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "board-esp32-devkit-c-v4",
+            "id": "esp",
+            "top": 67.2,
+            "left": 33.64,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-dht22",
+            "id": "dht1",
+            "top": -95.7,
+            "left": 177,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-led",
+            "id": "led1",
+            "top": 63.6,
+            "left": 339.8,
+            "attrs": {
+                "color": "red"
+            }
+        },
+        {
+            "type": "wokwi-led",
+            "id": "led2",
+            "top": 63.6,
+            "left": 272.6,
+            "attrs": {
+                "color": "green"
+            }
+        },
+        {
+            "type": "wokwi-resistor",
+            "id": "r1",
+            "top": 168,
+            "left": 268.25,
+            "rotate": 90,
+            "attrs": {
+                "value": "220"
+            }
+        },
+        {
+            "type": "wokwi-resistor",
+            "id": "r2",
+            "top": 168,
+            "left": 335.45,
+            "rotate": 90,
+            "attrs": {
+                "value": "220"
+            }
+        }
+    ],
+    "connections": [
+        [
+            "esp:TX",
+            "$serialMonitor:RX",
+            "",
+            []
+        ],
+        [
+            "esp:RX",
+            "$serialMonitor:TX",
+            "",
+            []
+        ],
+        [
+            "dht1:VCC",
+            "esp:3V3",
+            "red",
+            [
+                "v19.2",
+                "h-182.4"
+            ]
+        ],
+        [
+            "dht1:GND",
+            "esp:GND.2",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "dht1:SDA",
+            "esp:15",
+            "green",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "led2:A",
+            "r1:1",
+            "green",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "r1:2",
+            "esp:25",
+            "green",
+            [
+                "h0",
+                "v94.8",
+                "h-278.4",
+                "v-124.8"
+            ]
+        ],
+        [
+            "led2:C",
+            "esp:GND.3",
+            "orange",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "led1:A",
+            "r2:1",
+            "blue",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "r2:2",
+            "esp:26",
+            "blue",
+            [
+                "h0",
+                "v104.4",
+                "h-364.8",
+                "v-124.8"
+            ]
+        ],
+        [
+            "led1:C",
+            "esp:GND.3",
+            "green",
+            [
+                "v0"
+            ]
+        ]
+    ],
+    "dependencies": {}
+}
